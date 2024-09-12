@@ -1,0 +1,28 @@
+---
+import { TypewriterEffectSmooth } from "./ui/TypewriterEffect";
+
+const words = [
+  {
+    text: "Build",
+    className: "text-slate-500 dark:text-slate-500",
+  },
+  {
+    text: "awesome",
+    className: "text-slate-500 dark:text-slate-500",
+  },
+  {
+    text: "apps",
+    className: "text-slate-500 dark:text-slate-500",
+  },
+  {
+    text: "with",
+    className: "text-slate-500 dark:text-slate-500",
+  },
+  {
+    text: "Aceternity.",
+    className: "text-slate-500 dark:text-blue-500",
+  },
+];
+---
+
+<TypewriterEffectSmooth client:load words={words} />
