@@ -31,12 +31,6 @@ const Timeline: React.FC = () => {
       description:
         "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
     },
-    {
-      date: "April 2022",
-      title: "E-Commerce UI code in Tailwind CSS",
-      description:
-        "Get started with dozens of web components and interactive elements built on top of Tailwind CSS.",
-    },
   ];
 
   return (
@@ -65,13 +59,15 @@ const Timeline: React.FC = () => {
             <time className="mb-1 mx-3 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
               {item.date}
             </time>
-            <div className=" px-10">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                {item.title}
-              </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                {item.description}
-              </p>
+            <div id="professional-experience-card">
+              <div id="professional-experience-card-content" className=" w-full rounded-2xl border-solid border-2 p-5 m-5">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="text-base font-normal text-gray-500">
+                  {item.description}
+                </p>
+              </div>
             </div>
           </motion.li>
         );

@@ -1,18 +1,45 @@
 ---
-
+import SplineViewer from "./ui/SplineViewer";
+import NorthAmerica from "../../public/icons/png/north_america.png";
+import Gear from "../../public/icons/png/gear_2.png";
+import Image from "astro/components/Image.astro";
 ---
 
-<div class=" flex flex-col gap-10 justify-center align-middle items-center">
+<div class=" flex flex-col gap-10 justify-evenly align-middle items-center w-[90vw] h-[100vh]">
     <div class=" flex flex-row gap-10 justify-center align-middle items-center">
         <div>
-            <img class=" h-[300px] rounded-xl" src="/images/Ni_Gene_Professional.jpg" alt="">
+            <img class=" min-h-[300px] max-h-[500px] rounded-xl" src="/images/Ni_Gene_Professional.jpg" alt="">
         </div>
-        <div>
-            <h1 class=" text-5xl">Hi, I'm Gene</h1>
-            <p>and I love making things on the internet.</p>
-        </div>
+        <div class="relative flex flex-col justify-center items-center">
+            <!-- Container for the Spline Viewer with relative positioning -->
+            <div class="relative">
+              <!-- Heading positioned at the top of the Spline Viewer -->
+              <h1 class="absolute top-[5vh] left-1/2 transform -translate-x-1/2 text-5xl">Hi, I'm</h1>
+              
+              <!-- Spline Viewer in the middle -->
+              <SplineViewer client:load/>
+              
+              <!-- Paragraph positioned at the bottom of the Spline Viewer -->
+              <div>
+                <p class="absolute text-center w-[30vw] bottom-[5vh] left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+                    and I love making things on the internet
+                    <span class="inline-flex">
+                      <Image class="w-10 inline-block" src={NorthAmerica} alt="North American Icon"/>
+                    </span>
+                  </p>
+              </div>
+            </div>
+          </div>
+          
+        
     </div>
-    <div class=" px-20">
-        <p>I am a software engineer with a passion for creating beautiful and functional web applications. I have experience working with a variety of technologies, including JavaScript, React, Node.js, and MongoDB. I am always looking for new opportunities to learn and grow as a developer, and I am excited to see where my career takes me next.</p>
+    <div class=" flex flex-col gap-10">
+        <h2 class="group flex items-center font-bold text-6xl max-w-[500px]">
+            What I do
+            <span class=" inline-flex">
+                <Image class=" w-32 inline-block transition-transform duration-300 group-hover:rotate-180" src={Gear} alt="Gear Icon" />
+            </span>
+        </h2>
+        <p class=" text-xl">I am a software engineer with a passion for creating beautiful and functional web applications. I have experience working with a variety of technologies, including JavaScript, React, Node.js, and MongoDB. I am always looking for new opportunities to learn and grow as a developer, and I am excited to see where my career takes me next.</p>
     </div>
 </div>
