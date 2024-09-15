@@ -20,21 +20,23 @@ function useInView(ref: React.RefObject<HTMLElement>) {
 const Timeline: React.FC = () => {
   const timelineItems = [
     {
-      date: "February 2022",
-      title: "Application UI code in Tailwind CSS",
+      date: "August 2024 - Present",
+      title: "Michigan State University | Irrigation Laboratory",
+      subtitle: "Full Stack Software Developer",
       description:
         "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
     },
     {
-      date: "March 2022",
-      title: "Marketing UI design in Figma",
+      date: "May 2022 - May 2023",
+      title: "Johns Hopkins University APL | Lunar Vertex",
+      subtitle: "Research Intern",
       description:
         "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
     },
   ];
 
   return (
-    <ol className="relative border-s border-gray-200 dark:border-gray-700">
+    <ol className="relative border-s-4 border-gray-200 dark:border-gray-700 lg:m-[10vw]">
       {timelineItems.map((item, index) => {
         const ref = useRef<HTMLLIElement>(null); // Correctly type the ref
         const isInView = useInView(ref);
@@ -55,18 +57,23 @@ const Timeline: React.FC = () => {
             animate={controls}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <div className="absolute w-3 h-3 bg-red-600 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute w-[50px] h-[50px] bg-red-600 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
             <time className="mb-1 mx-3 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
               {item.date}
             </time>
             <div id="professional-experience-card">
-              <div id="professional-experience-card-content" className=" w-full rounded-2xl border-solid border-2 p-5 m-5">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {item.title}
-                </h3>
-                <p className="text-base font-normal text-gray-500">
+              <div id="professional-experience-card-content" className=" w-[60vw] flex flex-col gap-5 rounded-2xl border-solid border-2 p-5 m-5">
+                <div id="professional-experience-title">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-base font-normal text-gray-500">
+                    {item.subtitle}
+                  </p>
+                </div>
+                <div>
                   {item.description}
-                </p>
+                </div>
               </div>
             </div>
           </motion.li>
