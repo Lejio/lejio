@@ -7,7 +7,8 @@ export default {
 		extend: {
 			FontFamily: {
 				sans: ['CenturyGothic', ...defaultTheme.fontFamily.sans],
-			}
+			},
+			
 		},
 	},
 	plugins: [],
