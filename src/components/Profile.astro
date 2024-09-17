@@ -1,31 +1,7 @@
 ---
 import SplineViewer from "./ui/SplineViewer";
 import NorthAmerica from "../../public/icons/png/north_america.png";
-import Gear from "../../public/icons/png/gear_2.png";
-import Lightning from "../../public/icons/png/lightning_1.png"
 import Image from "astro/components/Image.astro";
-import { HoverEffect } from "./ui/CardHoverEffect";
-
-import { Frameworks, Tools, Languages, CloudServices } from "./StuffIUse";
-
-const stuffIUse = [
-    {
-        title: "Frameworks",
-        items: Frameworks
-    },
-    {
-        title: "Toolkit",
-        items: Tools
-    },
-    {
-        title: "Languages",
-        items: Languages
-    },
-    {
-        title: "Cloud Services",
-        items: CloudServices
-    }
-];
 ---
 
 <div class="flex flex-col gap-20 justify-center items-center align-middle w-[90vw] px-[5vw] py-[5vh]">
@@ -52,42 +28,9 @@ const stuffIUse = [
         </div>
     </div>
 
-    <!-- "What I Do" Section -->
-    <div class="flex flex-col gap-10 lg:px-[5vw]">
-        <h2 class="group flex items-center font-bold text-6xl max-w-[425px]">
-            What I do
-            <span class="inline-flex">
-                <Image class="w-32 inline-block transition-transform duration-300 group-hover:rotate-180" src={Gear} alt="Gear Icon" />
-            </span>
-        </h2>
-        <p class="text-xl">
-            I am a software engineer with a passion for creating beautiful and functional web applications. I have experience working with a variety of technologies, including JavaScript, React, Node.js, and MongoDB. I am always looking for new opportunities to learn and grow as a developer, and I am excited to see where my career takes me next.
-        </p>
-    </div>
 
-    <!-- "Stuff I Use" Section -->
-    <div class="flex flex-col gap-10 lg:px-[5vw]">
-        <h2 class="group flex items-center font-bold text-6xl max-w-[425px]">
-            Stuff I use
-            <span class="inline-flex">
-                <Image class="w-32 inline-block transition-transform duration-300 rotate-y-180" src={Lightning} alt="Lightning Icon" />
-            </span>
-        </h2>
-        <div class=" flex flex-row flex-wrap gap-10">
-            {stuffIUse.map((category) => {
-                return (
-                    <div class=" flex flex-col items-center p-5 rounded-xl border-black border-2">
-                        <h3 class=" text-2xl">{category.title}</h3>
-                        <HoverEffect client:load items={category.items} />
-                    </div>
-                );
-            })}
-        </div>
-    </div>
 </div>
 
 <style>
-    .group:hover .rotate-y-180 {
-        transform: rotateY(180deg);
-    }
+
 </style>

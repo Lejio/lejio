@@ -1,6 +1,7 @@
 import { cn } from "../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import Tooltip from "./ToolTip";
 import { type ImageMetadata } from "astro";
 
 export const HoverEffect = ({
@@ -47,9 +48,11 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card>
-            <Icon image={item.image} alt={item.title}  />
-          </Card>
+          <Tooltip text={item.title}>
+            <Card>
+                <Icon image={item.image} alt={item.title}  />
+            </Card>
+          </Tooltip>
         </div>
       ))}
     </div>
