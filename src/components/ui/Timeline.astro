@@ -2,60 +2,80 @@
 import Rocket from "/src/assets/rocket_1.png";
 import TimelineItem from "./TimelineItem";
 import TimelineCard from "./TimelineCard.astro";
+import ClassPic from "../../../public/images/CIRCUIT2022-classpic.jpg";
+import JHUAPL_ICON from "../../../public/images/jhuapl_shield.svg";
+import { type ImageMetadata } from "astro";
 
 type TimelineItemProps = {
   date: string;
   title: string;
   href: string;
   group: string;
-  subtitle: string;
+  employment_type: string;
+  work_title: string;
+  picture: ImageMetadata;
+  icon: ImageMetadata;
   description: string;
 };
 
 const timelineItems: TimelineItemProps[] = [
-    {
-        date: "August 2024 - Present",
-        href: "msuirrigation",
-        title: "Michigan State University",
-        group: "Irrigation Laboratory",
-        subtitle: "On-Call · Full Stack Software Developer",
-        description:
-        "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
-    },
-    {
-        date: "May 2022 - May 2023",
-        href: "johnshopkins",
-        title: "Johns Hopkins University APL",
-        group: "Lunar Vertex",
-        subtitle: "Full-Time · Research Intern",
-        description:
-        "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
-    },
+//   {
+//     date: "August 2024 - Present",
+//     href: "msuirrigation",
+//     title: "Michigan State University",
+//     group: "Irrigation Laboratory",
+//     employment_type: "On-Call",
+//     work_title: "Full Stack Software Developer",
+//     description:
+//       "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
+//   },
+  {
+    date: "May 2022 - May 2023",
+    href: "johnshopkins",
+    title: "Johns Hopkins University APL",
+    group: "Lunar Vertex",
+    employment_type: "Full-Time",
+    work_title: "Research Intern",
+    picture: ClassPic,
+    icon: JHUAPL_ICON,
+    description:
+      "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+  },
 ];
 ---
 
 <div>
-    <ol class="relative h-[70vh] border-s-4 border-gray-200 dark:border-gray-700 lg:mx-[5vw]">
+  <ol
+    class="relative h-[70vh] border-s-4 border-gray-200 dark:border-gray-700 lg:mx-[5vw]"
+  >
     <h2 class="px-10 flex items-center font-bold text-6xl">
-        Professional Experience
-        <span class="inline-flex">
-            <img class="w-32 inline-block rotate-45" src={Rocket.src} alt="Gear Icon" />
-        </span>
+      Professional Experience
+      <span class="inline-flex">
+        <img
+          class="w-32 inline-block rotate-45"
+          src={Rocket.src}
+          alt="Gear Icon"
+        />
+      </span>
     </h2>
-    <p class=" px-10">My Journey as a Developer</p>
-      <div id="separator" class=" h-24">
-      </div>
-        {timelineItems.map((item, index) => (
-            <TimelineItem client:load index={index} href={item.href}>
-                <TimelineCard
-                    date={item.date}
-                    title={item.title}
-                    href={item.href}
-                    group={item.group}
-                    subtitle={item.subtitle}
-                    description={item.description}
-                />
-            </TimelineItem>
-        ))}
-    </ol>
+    <p class="px-10">My Journey as a Developer</p>
+    <div id="separator" class="h-24"></div>
+    {
+      timelineItems.map((item, index) => (
+        <TimelineItem client:load index={index} href={item.href}>
+          <TimelineCard
+            date={item.date}
+            title={item.title}
+            href={item.href}
+            group={item.group}
+            image={item.picture}
+            icon={item.icon}
+            employment_type={item.employment_type}
+            work_title={item.work_title}
+            description={item.description}
+          />
+        </TimelineItem>
+      ))
+    }
+  </ol>
 </div>

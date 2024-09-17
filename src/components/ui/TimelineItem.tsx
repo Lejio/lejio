@@ -24,7 +24,6 @@ export default function TimelineItem({ children, index, href }: {children: React
         animate={controls}
         transition={{ duration: 0.5, delay: index * 0.2 }}
       >
-        <div className="absolute w-[50px] h-[50px] bg-white rounded-full -mt-3 -start-7 border-4 border-black"></div>
         { children }
       </motion.li>
     </a>
