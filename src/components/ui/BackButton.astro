@@ -1,0 +1,15 @@
+---
+import BackIcon from "../../../public/icons/png/arrow.png";
+
+interface Props {
+    href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<div class=" self-start rotate-180">
+    <a href={`/#${href}`}>
+        <img class="h-10" src={BackIcon.src} alt="Back Icon">
+    </a>
+</div>

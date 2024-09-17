@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ClassPic from "../../public/images/CIRCUIT2022-classpic.jpg";
 import JHUAPL_ICON from "../../public/images/jhuapl_shield.svg";
 import JHUAPL_TEXT from "../../public/images/jhuapl_text.svg";
+import BackButton from "../components/ui/BackButton.astro";
 // {
 // date: "May 2022 - May 2023",
 // href: "johnshopkins",
@@ -17,6 +18,7 @@ import JHUAPL_TEXT from "../../public/images/jhuapl_text.svg";
 
 <Layout title="Gene @ JHUAPL">
     <main class=" flex flex-col items-center gap-[5vw] p-[5vw]">
+        <BackButton href="johnshopkins"/>
         <div class="flex items-center space-x-2">
             <h1 class=" text-3xl"><span transition:name="work_title-johnshopkins">Research Intern</span> @ <img transition:name="icon-johnshopkins" class="inline h-[5vw]" src={JHUAPL_ICON.src} alt="JHUAPL Logo"><img transition:name="title-johnshopkins" class="inline h-[5vw]" src={JHUAPL_TEXT.src} alt="JHUAPL Logo"></h1>
         </div>

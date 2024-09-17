@@ -1,5 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import MSU_ICON from "../../public/images/msu_helmet.svg";
+import MSU_TEXT from "../../public/images/msu_text.svg";
+import MSU_IrrigationWeb from "../../public/images/msu_irrigationweb.png";
+import BackButton from "../components/ui/BackButton.astro";
 // {
 //     date: "August 2024 - Present",
 //     href: "msuirrigation",
@@ -11,13 +15,15 @@ import Layout from "../layouts/Layout.astro";
 // },
 
 ---
-
-<Layout title="MSU Irrigation">
-    <div>
-        <h1
-        transition:name="title-msuirrigation"
-        >
-            Michigan State University | Irrigation Laboratory
-        </h1>
-    </div>
+<Layout title="Gene @ MSU">
+    <main class=" flex flex-col items-center gap-[5vw] p-[5vw]">
+        <BackButton href="msuirrigation"/>
+        <div class="flex items-center space-x-2">
+            <h1 class=" text-3xl"><span transition:name="work_title-msuirrigation">Full Stack Software Developer</span> @ <img transition:name="icon-msuirrigation" class="inline h-[5vw] px-[1vw]" src={MSU_ICON.src} alt="JHUAPL Logo"><img transition:name="title-msuirrigation" class="inline h-[5vw]" src={MSU_TEXT.src} alt="JHUAPL Logo"></h1>
+        </div>
+        <div class=" flex flex-col items-center">
+            <img transition:name="image-msuirrigation" class="rounded-lg" src={MSU_IrrigationWeb.src} alt="CIRCUIT">
+            <p class=" italic">In progress MSU Irrigation Lab website</p>
+        </div>
+    </main>
 </Layout>

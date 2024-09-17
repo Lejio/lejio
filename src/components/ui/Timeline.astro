@@ -4,6 +4,8 @@ import TimelineItem from "./TimelineItem";
 import TimelineCard from "./TimelineCard.astro";
 import ClassPic from "../../../public/images/CIRCUIT2022-classpic.jpg";
 import JHUAPL_ICON from "../../../public/images/jhuapl_shield.svg";
+import MSU_ICON from "../../../public/images/msu_helmet.svg";
+import MSU_IrrigationWeb from "../../../public/images/msu_irrigationweb.png";
 import { type ImageMetadata } from "astro";
 
 type TimelineItemProps = {
@@ -19,16 +21,18 @@ type TimelineItemProps = {
 };
 
 const timelineItems: TimelineItemProps[] = [
-//   {
-//     date: "August 2024 - Present",
-//     href: "msuirrigation",
-//     title: "Michigan State University",
-//     group: "Irrigation Laboratory",
-//     employment_type: "On-Call",
-//     work_title: "Full Stack Software Developer",
-//     description:
-//       "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.",
-//   },
+  {
+    date: "August 2024 - Present",
+    href: "msuirrigation",
+    title: "Michigan State University",
+    group: "Irrigation Laboratory",
+    employment_type: "On-Call",
+    work_title: "Full Stack Software Developer",
+    picture: MSU_IrrigationWeb,
+    icon: MSU_ICON,
+    description:
+      "I am Working with Dr. Younsuk Dong in improving the codebase of Particle.io IoT boards. I am making the code more modular and readable for future developers by creating a library of all MSU Irrigation board functions. I am also working on the website for the Irrigation Lab, using Next.js to display the labs work and research to the public.",
+  },
   {
     date: "May 2022 - May 2023",
     href: "johnshopkins",
@@ -39,16 +43,16 @@ const timelineItems: TimelineItemProps[] = [
     picture: ClassPic,
     icon: JHUAPL_ICON,
     description:
-      "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+      "I was a CIRCUIT Intern for the Lunar Vertex team at JHUAPL. Lunar Vertex is a mission led by JHUAPL to investigate the magnetic anomaly named Reiner Gamma. I worked on creating a software that allowed for the filtering of light noise from the lunar surface. While working at JHUAPL, I also did mangetics testing and calibration for the Lunar Vertex mission.",
   },
 ];
 ---
 
 <div>
   <ol
-    class="relative h-[70vh] border-s-4 border-gray-200 dark:border-gray-700 lg:mx-[5vw]"
+    class="relative border-s-4 border-gray-200 dark:border-gray-700 lg:mx-[5vw]"
   >
-    <h2 class="px-10 flex items-center font-bold text-6xl">
+    <h2 id="experience" class="px-10 flex items-center font-bold text-6xl">
       Professional Experience
       <span class="inline-flex">
         <img
@@ -62,7 +66,7 @@ const timelineItems: TimelineItemProps[] = [
     <div id="separator" class="h-24"></div>
     {
       timelineItems.map((item, index) => (
-        <TimelineItem client:load index={index} href={item.href}>
+        <TimelineItem client:load index={index}>
           <TimelineCard
             date={item.date}
             title={item.title}

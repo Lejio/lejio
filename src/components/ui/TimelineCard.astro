@@ -26,26 +26,30 @@ const { title, employment_type, work_title, href, group, date, image, icon, desc
 >
   {date}
 </time>
-<div id="professional-experience-card">
-  <div
-    id="professional-experience-card-content"
-    class="w-[60vw] flex flex-col gap-5 rounded-2xl border-solid border-2 p-5 m-5 mb-40"
-  >
-    <div id="professional-experience-title">
-      <h3 class="text-lg font-semibold text-gray-900">
-        <span transition:name={`title-${href}`}>{title}</span> | <span
-          transition:name={`group-${href}`}>{group}</span
-        >
-      </h3>
-      <p class="text-base font-normal text-gray-500">
-        <span transition:name={`employment_type-${href}`}
-          >{employment_type}</span
-        > · <span transition:name={`work_title-${href}`}>{work_title}</span>
-      </p>
-    </div>
-    <img transition:name={`image-${href}`} class=" rounded-lg" src={image.src} alt={`img-${href}`}}>
-    <div transition:name={`description-${href}`}>
-      {description}
+<a href={href}>
+  <div id="professional-experience-card ">
+    <div
+      id="professional-experience-card-content"
+      class="flex flex-col gap-5 rounded-2xl border-solid border-2 p-5 m-5 mb-40"
+    >
+    
+
+      <div id="professional-experience-title">
+        <h3 id={href} class="text-lg font-semibold text-gray-900">
+          <span transition:name={`title-${href}`}>{title}</span> | <span
+            transition:name={`group-${href}`}>{group}</span
+          >
+        </h3>
+        <p class="text-base font-normal text-gray-500">
+          <span transition:name={`employment_type-${href}`}
+            >{employment_type}</span
+          > · <span transition:name={`work_title-${href}`}>{work_title}</span>
+        </p>
+      </div>
+      <img transition:name={`image-${href}`} class=" rounded-lg" src={image.src} alt={`img-${href}`}}>
+      <div transition:name={`description-${href}`}>
+        {description}
+      </div>
     </div>
   </div>
-</div>
+</a>
