@@ -1,18 +1,19 @@
 ---
-
 interface Props {
 	title: string;
     subtitle: string;
+    href: string;
     group: string;
     date: string;
     description: string;
 }
 
-const { title, subtitle, group, date, description } = Astro.props;
+const { title, subtitle, href, group, date, description } = Astro.props;
 ---
 
 <time
   class="mb-1 mx-7 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+  transition:name={`time-${href}`}
 >
   {date}
 </time>
@@ -22,14 +23,20 @@ const { title, subtitle, group, date, description } = Astro.props;
     class=" w-[60vw] flex flex-col gap-5 rounded-2xl border-solid border-2 p-5 m-5 mb-40"
   >
     <div id="professional-experience-title">
-      <h3 class="text-lg font-semibold text-gray-900">
+      <h3 class="text-lg font-semibold text-gray-900"
+      transition:name={`title-${href}`}
+      >
         {title} | {group}
       </h3>
-      <p class="text-base font-normal text-gray-500">
+      <p class="text-base font-normal text-gray-500"
+      transition:name={`subtitle-${href}`}
+      >
         {subtitle}
       </p>
     </div>
-    <div>
+    <div
+    transition:name={`description-${href}`}
+    >
       {description}
     </div>
   </div>
