@@ -17,8 +17,8 @@ const { title, employment_type, work_title, href, group, date, image, icon, desc
   Astro.props;
 ---
 
-<div class="flex justify-center items-center absolute w-[75px] h-[75px] bg-white rounded-full -mt-3 -start-10 border-4 border-black">
-  <img transition:name={`icon-${href}`} class=" h-10" src={icon.src} alt={`icon-${href}`}>
+<div class="flex justify-center items-center absolute w-[50px] h-[50px] md:w-[75px] md:h-[75px] dark:bg-black bg-white rounded-full -mt-3 -start-7 md:-start-10 border-4 dark:border-gray-500 border-black">
+  <img transition:name={`icon-${href}`} class=" h-8 md:h-10" src={icon.src} alt={`icon-${href}`}>
 </div>
 <time
   class="mb-1 ml-12 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
@@ -30,12 +30,12 @@ const { title, employment_type, work_title, href, group, date, image, icon, desc
   <div id="professional-experience-card ">
     <div
       id="professional-experience-card-content"
-      class="flex flex-col gap-5 rounded-2xl border-solid border-2 p-5 m-5 mb-40"
+      class="flex flex-col gap-5 rounded-2xl border-solid dark:border-gray-500 border-[1px] md:border-2 p-5 m-5 mb-40"
     >
     
 
       <div id="professional-experience-title">
-        <h3 id={href} class="text-lg font-semibold text-gray-900">
+        <h3 id={href} class="text-base md:text-2xl font-semibold dark:text-white text-gray-900">
           <span transition:name={`title-${href}`}>{title}</span> | <span
             transition:name={`group-${href}`}>{group}</span
           >
@@ -47,9 +47,9 @@ const { title, employment_type, work_title, href, group, date, image, icon, desc
         </p>
       </div>
       <img transition:name={`image-${href}`} class=" rounded-lg" src={image.src} alt={`img-${href}`}}>
-      <div transition:name={`description-${href}`}>
+      <p class=" text-sm md:text-base" transition:name={`description-${href}`}>
         {description}
-      </div>
+      </p>
     </div>
   </div>
 </a>

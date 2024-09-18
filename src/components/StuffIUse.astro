@@ -1,38 +1,21 @@
 ---
+// Import necessary components and assets
 import { HoverEffect } from "./ui/CardHoverEffect";
 import Lightning from "../../public/icons/png/lightning_1.png"
 import Image from "astro/components/Image.astro";
-import { Frameworks, Tools, Languages, CloudServices } from "./StuffIUse";
+import { getStuffIUse } from "../components/StuffIUse";
 
-const stuffIUse = [
-    {
-        title: "Frameworks",
-        items: Frameworks
-    },
-    {
-        title: "Toolkit",
-        items: Tools
-    },
-    {
-        title: "Languages",
-        items: Languages
-    },
-    {
-        title: "Cloud Services",
-        items: CloudServices
-    }
-];
+// This will run server-side and does not have access to the `window` object.
+const stuffIUse = getStuffIUse(false); // Default to light mode
 ---
-
-<!-- "Stuff I Use" Section -->
 <div class="flex flex-col gap-10 lg:px-[5vw]">
-    <h2 class="group flex items-center font-bold text-6xl max-w-[425px]">
+    <h2 class="group flex items-center font-bold text-4xl md:text-6xl max-w-[425px]">
         Stuff I use
         <span class="inline-flex">
-            <Image class="w-32 inline-block transition-transform duration-300 rotate-y-180" src={Lightning} alt="Lightning Icon" />
+            <Image class=" w-24 lg:w-32 inline-block transition-transform duration-300 rotate-y-180" src={Lightning} alt="Lightning Icon" />
         </span>
     </h2>
-    <div class=" flex flex-row flex-wrap gap-10">
+    <div id="stuff-container" class=" flex flex-row flex-wrap gap-10">
         {stuffIUse.map((category) => {
             return (
                 <div class=" flex flex-col items-center p-5 rounded-xl border-black border-2">
@@ -46,6 +29,29 @@ const stuffIUse = [
 
 <style>
     .group:hover .rotate-y-180 {
-            transform: rotateY(180deg);
+        transform: rotateY(180deg);
     }
 </style>
+
+<!-- <script is:inline>
+    // Check if the user prefers dark mode
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Fetch the correct data based on the user's dark mode preference
+    fetchStuffIUse(prefersDarkMode);
+
+    function fetchStuffIUse(dark) {
+        const stuffContainer = document.getElementById('stuff-container');
+        if (stuffContainer) {
+            // Fetch or compute the `stuffIUse` data based on dark mode preference
+            const stuff = getStuffIUse(dark);
+            // Update the UI with the correct data
+            stuffContainer.innerHTML = stuff.map(category => `
+                <div class="flex flex-col items-center p-5 rounded-xl border-black border-2">
+                    <h3 class="text-2xl">${category.title}</h3>
+                    <HoverEffect items="${category.items}" />
+                </div>
+            `).join('');
+        }
+    }
+</script> -->
