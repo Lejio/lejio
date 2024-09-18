@@ -4,6 +4,7 @@ import ClassPic from "../../public/images/CIRCUIT2022-classpic.jpg";
 import JHUAPL_ICON from "../../public/images/jhuapl_shield.svg";
 import JHUAPL_TEXT from "../../public/images/jhuapl_text.svg";
 import BackButton from "../components/ui/BackButton.astro";
+import ThemeButton from "../components/ui/ThemeButton";
 // {
 // date: "May 2022 - May 2023",
 // href: "johnshopkins",
@@ -17,14 +18,20 @@ import BackButton from "../components/ui/BackButton.astro";
 ---
 
 <Layout title="Gene @ JHUAPL">
-    <main class=" flex flex-col items-center gap-[5vw] p-[5vw]">
-        <BackButton href="johnshopkins"/>
+    <main class=" flex flex-col items-center gap-[5vw] p-[5vw] text-black dark:text-white dark:bg-black">
+        <div class=" flex flex-row justify-between w-full">
+            <BackButton href="johnshopkins"/>
+            <ThemeButton client:only="react"/>
+        </div>
         <div class="flex items-center space-x-2">
             <h1 class=" text-base md:text-3xl"><span transition:name="work_title-johnshopkins">Research Intern</span> @ <img transition:name="icon-johnshopkins" class="inline h-[5vw]" src={JHUAPL_ICON.src} alt="JHUAPL Logo"><img transition:name="title-johnshopkins" class="inline h-[5vw]" src={JHUAPL_TEXT.src} alt="JHUAPL Logo"></h1>
         </div>
         <div class=" flex flex-col items-center">
             <img transition:name="image-johnshopkins" class="rounded-lg" src={ClassPic.src} alt="CIRCUIT">
             <p class=" italic">CIRCUIT 2022 Class Picture</p>
+        </div>
+        <div>
+            Description
         </div>
     </main>
 </Layout>
