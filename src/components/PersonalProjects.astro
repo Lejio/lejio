@@ -1,13 +1,55 @@
 ---
 import LightBulb from '../../public/icons/png/lightbulb_2.png';
 import { Image } from 'astro:assets';
+import { HoverEffect } from './ui/ProjectsHoverEffect';
+
+export const projects = [
+  {
+    title: "Nexitor",
+    description:
+      "A Next.js and Capacitor.js template that allows you to set up cross platform applications, simplifying the setup process.",
+    link: "/projects",
+  },
+  {
+    title: "Serenade Music",
+    description:
+      "A advanced Discord music bot that contains search, play, skip, queue, and more. Serenade uses 2 dimensional embeds to display the queue and the current song.",
+    link: "/projects",
+  },
+  {
+    title: "TCGRetreiver",
+    description:
+      "A python package that works inside PyQt to retrieve the most current and accurate pricing of playing cards from TCGPlayer after they depricated theirs.",
+    link: "/projects",
+  },
+  {
+    title: "Sopher",
+    description:
+      "Cross platform automatic form filler that uses machine learning to fill out medical forms for you.",
+    link: "/projects",
+  },
+  {
+    title: "Gritmeals",
+    description:
+      "A scraper that retrieves UMBC's dining hall menu and emails it to subscribers every day.",
+    link: "/projects",
+  },
+  {
+    title: "Discoreon",
+    description:
+      "A Pokemon Discord bot that allows you to collect, trade, and battle Pokemon with your friends. Discoreon is the closest thing to a Pokemon game on Discord.",
+    link: "/projects",
+  },
+];
+
 ---
 
 <div class="lg:px-[5vw]">
-    <div class=" flex items-center font-bold text-6xl">
+    <div class=" flex items-center font-bold text-4xl md:text-6xl">
         Personal Projects
         <span class="inline-flex">
             <Image class="w-32 inline-block transition-transform duration-300 rotate-y-180" src={LightBulb} alt="Lightbuilb Icon" />
         </span>
     </div>
+    <HoverEffect client:load items={projects} />
 </div>
