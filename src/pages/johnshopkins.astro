@@ -5,6 +5,13 @@ import JHUAPL_ICON from "../../public/images/jhuapl_shield.svg";
 import JHUAPL_TEXT from "../../public/images/jhuapl_text.svg";
 import BackButton from "../components/ui/BackButton.astro";
 import ThemeButton from "../components/ui/ThemeButton";
+import { Image } from "astro:assets";
+
+import LunarVertexMission from "../../public/images/lunarvertex_mission.jpg"
+import LunarVertexRover from "../../public/images/lunarvertex_rover.jpg"
+import STEMInvestment from "../../public/images/STEMInvestment.jpg"
+import Python from "../../public/icons/svg/python.svg"
+import Qt from "../../public/icons/svg/qt.svg"
 // {
 // date: "May 2022 - May 2023",
 // href: "johnshopkins",
@@ -31,7 +38,88 @@ import ThemeButton from "../components/ui/ThemeButton";
             <p class=" italic">CIRCUIT 2022 Class Picture</p>
         </div>
         <div>
-            Description
+            <p>
+                During the summer of my freshman year of college, I interned at Johns Hopkins Applied Physics Laboratory as a CIRCUIT intern. I worked with 2 other mechanical engineering team members on the <span><a class=" text-blue-500 hover:underline" href="https://www.jhuapl.edu/destinations/missions/lunar-vertex">Lunar Vertex</a></span> team. As a CIRCUIT research intern, we helped develop a model that would allow for the calculation of the SNR for the onboard multispectral microscope built by Canadensys. The model contains considerations from the lunar albedo, to noise from neigboring lunar craters, to random light particles from other celestial objects. Our model successfully passed the simulation test and would be used in the 2024 Lunar Vertex Mission.
+            </p>
+        </div>
+        <div class=" flex flex-row gap-4 justify-center w-full">
+            <div class=" flex flex-col gap-2 w-full justify-center items-center md:w-1/2 h-auto" >
+                <Image class=" rounded-lg" src={LunarVertexMission} alt="Lunar Vertex Mission" />
+                <p class=" italic"><a class=" hover:underline" href="https://www.jhuapl.edu/destinations/missions/lunar-vertex">Lunar Vertex Mission Site</a></p>
+            </div>
+            <div class=" flex flex-col gap-2 w-full justify-center items-center md:w-1/2 h-auto" >
+                <Image class="rounded-lg" src={LunarVertexRover} alt="Lunar Vertex Rover" />
+                <p class=" italic"><a class=" hover:underline" href="https://www.jhuapl.edu/destinations/missions/lunar-vertex">Lunar Vertex Rover</a></p>
+            </div>
+        </div>
+        <div>
+            <p>
+                We created a GUI interface system that would allow scientists to interact and change the formula. The program could also export to csv and excel. We then created a linear regression model that shows the efficiency of the microscope under specific SNR interference. 
+            </p>
+        </div>
+        <div class=" flex flex-col gap-4 w-full">
+            <h3 class=" text-4xl">Tools we used:</h3>
+            <div class=" flex flex-row gap-4">
+                <Image class="w-16 md:w-24" src={Python} alt="Python"/>
+                <Image class="w-16 md:w-24" src={Qt} alt="PyQT"/>
+            </div>
+        </div>
+        <div class=" flex flex-col gap-4 w-full">
+            <h3 class=" text-4xl">Net-Hack Hackthon</h3>
+            <div class=" flex flex-row justify-center items-center gap-4">
+                <div class=" flex flex-col gap-4">
+                    <p>
+                        We won first place in the cyber security track for the CIRCUIT intern wide hackathon. Our project named The Locker, is a new biometrics identification system that utilizes a user's keystrokes to determine their identity. Using reinforcement learning, we were able to create a system where the user's were identified just based on the way they use the keyboard.
+                        <br><br>
+                        Keystroke biometrics accounts for various factors that could help identify a user. We used this fact to build a simple program to demonstrate that the way you type is different from another person. 
+                    </p>
+                    <div class="pr-10">
+                        <img class=" rounded-lg" src="https://storage.googleapis.com/msu-iris-storage/circuit.jpg" alt="On the Job" />
+                    </div>
+                </div>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7010010850182717440" height="545" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+            </div>
+        </div>
+        <div class=" flex flex-col gap-4 w-full">
+            <h3 class=" text-4xl">
+                CIRCUIT Project Presentation
+            </h3>
+            <Image class="rounded-lg" src={STEMInvestment} alt="STEM Investment Presentation"/>
+        </div>
+        <div>
+            <p>
+                Over the next two semesters in my sophomore year, we worked on writing an internal paper regarding our work with the RMM GUI. We also then began our calibrations testing for the magnetometer instrument onboard the rover.
+            </p>
+        </div>
+        <div class=" flex flex-col gap-4 w-full">
+            <h3 class=" text-4xl">
+                My Amazing Teammates:
+            </h3>
+            <div class=" flex flex-col">
+                <h4 class=" text-2xl"><a href="https://www.linkedin.com/in/ryan-phillip-214273204/">Ryan Phillip</a></h4>
+                Mechanical Engineer @ UMD
+            </div>
+            <div class=" flex flex-col">
+                <h4 class=" text-2xl"><a href="https://www.linkedin.com/in/tesfamichael-worku-umbc/">Tesfamichael Worku</a></h4>
+                Mechanical Engineer @ UMBC
+            </div>
+        </div>
+        <div class=" flex flex-col gap-4 w-full">
+            <h3 class=" text-4xl">
+                Special thanks to my Mentors:
+            </h3>
+            <div class=" flex flex-col">
+                <h4 class=" text-2xl"><a href="https://www.linkedin.com/in/david-blewett-a143584/">David Blewett</a></h4>
+                Principal Professional Staff @ JHUAPL Planetary Exploration Group
+            </div>
+            <div class=" flex flex-col">
+                <h4 class=" text-2xl"><a href="https://www.linkedin.com/in/rachel-klima-b010a71b3/">Rachel Klima</a></h4>
+                Principal Staff Scientist @ JHUAPL
+            </div>
+            <div class=" flex flex-col">
+                <h4 class=" text-2xl"><a href="https://www.linkedin.com/in/william-ames-5a364837/">William Ames</a></h4>
+                Instrument System Engineer @ JHUAPL
+            </div>
         </div>
     </main>
 </Layout>
