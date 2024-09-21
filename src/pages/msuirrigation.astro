@@ -18,9 +18,8 @@ import ThemeButton from "../components/ui/ThemeButton";
 ---
 <Layout title="Gene @ MSU">
     <main class=" flex flex-col items-center gap-[5vw] p-[5vw]">
-        <div class=" flex flex-row justify-between w-full">
+        <div class=" flex flex-row justify-start w-full">
             <BackButton href="msuirrigation"/>
-            <ThemeButton client:only="react"/>
         </div>
         <div class="flex items-center space-x-2">
             <h1 class=" text-sm md:text-3xl"><span transition:name="work_title-msuirrigation">Full Stack Software Developer</span> @ <img transition:name="icon-msuirrigation" class="inline h-[5vw] px-[1vw]" src={MSU_ICON.src} alt="JHUAPL Logo"><img transition:name="title-msuirrigation" class="inline h-[5vw]" src={MSU_TEXT.src} alt="JHUAPL Logo"></h1>
